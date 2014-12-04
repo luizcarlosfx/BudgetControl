@@ -92,7 +92,9 @@ public class MainActivity extends BaseActivity {
 
         double balance  = calculateBalance();
 
-        String balanceText = String.format("R$ %.2f", balance);
+        String currency = getResources().getString(R.string.currency);
+
+        String balanceText = String.format(currency + " %.2f", balance);
 
         int redColorId = R.color.dark_red;
 
