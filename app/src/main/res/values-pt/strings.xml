@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Budget Control</string>
+    <string name="action_settings">Configurações</string>
+    <string name="drawer_open">Abrir barra lateral</string>
+    <string name="drawer_close">Fechar Barra Lateral</string>
+    <string name="transactions">TRANSAÇÕES</string>
+    <string name="welcome">Bem Vindo Luiz Carlos</string>
+    <string name="currentBalance">SALDO ATUAL</string>
+    <string name="newTransaction">NOVO</string>
+    <string name="description">Descrição</string>
+    <string name="submit">Gravar</string>
+    <string name="currency">R$</string>
+    <string name="value">Valor</string>
+    <string name="date">Data</string>
+    <string name="load">Carregar</string>
+    <string name="details">Detalhes</string>
+    <string name="year">Ano</string>
+    <string name="month">Mês</string>
+    <string name="day">Dia</string>
+    <string name="delete">Apagar</string>
+
+    <string name="sidebar_home">Início</string>
+    <string name="sidebar_query">Consulta</string>
+    <string name="sidebar_settings">Configurações</string>
+
+    <string name="description_null"> Descrição deve ser preenchida</string>
+    <string name="value_null">Valor deve ser preenchido</string>
+    <string name="value_notNumber">Valor deve ser um número</string>
+    <string name="transaction_saved">Salvo com sucesso!</string>
+
+    <string name="balance">Saldo</string>
+    <string name="income">Recebido</string>
+    <string name="debit">Debitado</string>
+
+</resources>

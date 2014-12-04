@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Budget Control</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="transactions">Transactions</string>
+    <string name="welcome">Welcome Luiz Carlos</string>
+    <string name="currentBalance">YOUR BALANCE</string>
+    <string name="newTransaction">NEW</string>
+    <string name="description">Description</string>
+    <string name="submit">Save</string>
+    <string name="currency">$</string>
+    <string name="value">Ammount</string>
+    <string name="date">Date</string>
+    <string name="load">Carregar</string>
+    <string name="details">Details</string>
+    <string name="year">Year</string>
+    <string name="month">Month</string>
+    <string name="day">Day</string>
+    <string name="delete">Delete</string>
+
+    <string name="sidebar_home">Home</string>
+    <string name="sidebar_query">Query</string>
+    <string name="sidebar_settings">Configurations</string>
+
+    <string name="description_null"> Description must not be empty </string>
+    <string name="value_null">Ammount must no be empty </string>
+    <string name="value_notNumber"> Ammount must be a valid number</string>
+    <string name="transaction_saved">Transaction saved!</string>
+
+    <string name="balance">Balance</string>
+    <string name="income">Income</string>
+    <string name="debit">Debit</string>
+
+</resources>
