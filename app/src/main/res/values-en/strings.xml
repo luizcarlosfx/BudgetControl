@@ -22,7 +22,7 @@
 
     <string name="sidebar_home">Home</string>
     <string name="sidebar_query">Query</string>
-    <string name="sidebar_settings">Configurations</string>
+    <string name="sidebar_settings">Settings</string>
 
     <string name="description_null"> Description must not be empty </string>
     <string name="value_null">Ammount must no be empty </string>

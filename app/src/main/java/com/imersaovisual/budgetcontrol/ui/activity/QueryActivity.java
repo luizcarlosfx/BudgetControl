@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.imersaovisual.budgetcontrol.R;
 import com.imersaovisual.budgetcontrol.model.Transaction;
@@ -112,16 +111,11 @@ public class QueryActivity extends BaseActivity {
         displayModeRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.dayRadioButton)
-                {
+                if (checkedId == R.id.dayRadioButton) {
                     mode = DisplayMode.DAY;
-                }
-                else if(checkedId == R.id.monthRadioButton)
-                {
+                } else if (checkedId == R.id.monthRadioButton) {
                     mode = DisplayMode.MONTH;
-                }
-                else if(checkedId == R.id.yearRadioButton)
-                {
+                } else if (checkedId == R.id.yearRadioButton) {
                     mode = DisplayMode.YEAR;
                 }
 
@@ -130,60 +124,45 @@ public class QueryActivity extends BaseActivity {
         });
     }
 
-    private List<Transaction> filterTransactions()
-    {
+    private List<Transaction> filterTransactions() {
         List<Transaction> filteredList = new ArrayList<Transaction>();
 
-        if(mode == DisplayMode.DAY)
-        {
-            for (Transaction transaction : transactions)
-            {
+        if (mode == DisplayMode.DAY) {
+            for (Transaction transaction : transactions) {
                 Calendar calendar = Calendar.getInstance();
 
                 calendar.setTime(transaction.getDate());
 
-                if(calendar.get(Calendar.MONTH) == selectedCalendar.get(Calendar.MONTH) && calendar.get(Calendar.DAY_OF_MONTH) == selectedCalendar.get(Calendar.DAY_OF_MONTH))
-                {
+                if (calendar.get(Calendar.MONTH) == selectedCalendar.get(Calendar.MONTH) && calendar.get(Calendar.DAY_OF_MONTH) == selectedCalendar.get(Calendar.DAY_OF_MONTH)) {
                     filteredList.add(transaction);
                 }
             }
-        }
-        else if(mode == DisplayMode.MONTH)
-        {
-            for (Transaction transaction : transactions)
-            {
+        } else if (mode == DisplayMode.MONTH) {
+            for (Transaction transaction : transactions) {
                 Calendar calendar = Calendar.getInstance();
 
                 calendar.setTime(transaction.getDate());
 
-                if(calendar.get(Calendar.MONTH) == selectedCalendar.get(Calendar.MONTH))
-                {
+                if (calendar.get(Calendar.MONTH) == selectedCalendar.get(Calendar.MONTH)) {
                     filteredList.add(transaction);
                 }
             }
-        }
-        else if(mode == DisplayMode.YEAR)
-        {
+        } else if (mode == DisplayMode.YEAR) {
             filteredList.addAll(transactions);
         }
 
         return filteredList;
     }
 
-    void updateGUI()
-    {
+    void updateGUI() {
         String selectedDate = "";
 
-        if(mode == DisplayMode.DAY) {
-            selectedDate = String.format("%s/%s/%s", datePicker.getDayOfMonth(), datePicker.getMonth() + 1, datePicker.getYear());
-        }
-        else if(mode == DisplayMode.MONTH)
-        {
-            selectedDate = String.format("%s/%s", datePicker.getMonth() + 1, datePicker.getYear());
-        }
-        else if(mode == DisplayMode.YEAR)
-        {
-            selectedDate = String.format("%s", datePicker.getYear());
+        if (mode == DisplayMode.DAY) {
+            selectedDate = String.format("%s/%s/%s", selectedCalendar.get(Calendar.DAY_OF_MONTH), selectedCalendar.get(Calendar.MONTH) + 1, selectedCalendar.get(Calendar.YEAR));
+        } else if (mode == DisplayMode.MONTH) {
+            selectedDate = String.format("%s/%s", selectedCalendar.get(Calendar.MONTH) + 1, selectedCalendar.get(Calendar.YEAR));
+        } else if (mode == DisplayMode.YEAR) {
+            selectedDate = String.format("%s", selectedCalendar.get(Calendar.YEAR));
         }
         dateTextView.setText(selectedDate);
 
@@ -222,12 +201,9 @@ public class QueryActivity extends BaseActivity {
 
         int colorId = blackId;
 
-        if(totalBalance > 0)
-        {
+        if (totalBalance > 0) {
             colorId = greenId;
-        }
-        else if(totalBalance < 0)
-        {
+        } else if (totalBalance < 0) {
             colorId = redColorId;
         }
 
@@ -254,8 +230,7 @@ public class QueryActivity extends BaseActivity {
         transactions = repository.find(TransactionRepository.DATE + " >= ? and " + TransactionRepository.DATE + " < ? ", args, null, null, null, null);
     }
 
-    private long yearTime(int year)
-    {
+    private long yearTime(int year) {
         Calendar calendar = Calendar.getInstance();
 
         calendar.set(Calendar.DAY_OF_MONTH, 1);
